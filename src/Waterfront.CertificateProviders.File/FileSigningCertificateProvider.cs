@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Waterfront.Core.Tokens.Signing.CertificateProviders;
 
-namespace Waterfront.CertificateProviders.Files;
+namespace Waterfront.CertificateProviders.File;
 
 public class FileSigningCertificateProvider : SigningCertificateProviderBase
 {
@@ -51,23 +51,23 @@ public class FileSigningCertificateProvider : SigningCertificateProviderBase
 
     private async ValueTask<X509Certificate2?> GetCertificateAsync(FileSigningCertificateOptions options)
     {
-        if (!File.Exists(options.CertificatePath))
+        if (!System.IO.File.Exists(options.CertificatePath))
         {
             Logger.LogError("Certificate file does not exist: {CertificatePath}", options.CertificatePath);
             return null;
         }
 
-        if (!File.Exists(options.PrivateKeyPath))
+        if (!System.IO.File.Exists(options.PrivateKeyPath))
         {
             Logger.LogError("Private key file does not exist: {PrivateKeyPath}", options.PrivateKeyPath);
             return null;
         }
 
-        await using FileStream certFs = File.OpenRead(options.CertificatePath);
+        await using FileStream certFs = System.IO.File.OpenRead(options.CertificatePath);
         using StreamReader certSr = new StreamReader(certFs, Encoding.ASCII);
         string certificateData = await certSr.ReadToEndAsync();
 
-        await using FileStream pkFs = File.OpenRead(options.PrivateKeyPath);
+        await using FileStream pkFs = System.IO.File.OpenRead(options.PrivateKeyPath);
         using StreamReader pkSr = new StreamReader(pkFs, Encoding.ASCII);
         string pkData = await pkSr.ReadToEndAsync();
 

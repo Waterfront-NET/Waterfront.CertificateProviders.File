@@ -1,4 +1,4 @@
-namespace Waterfront.CertificateProviders.Files;
+namespace Waterfront.CertificateProviders.File;
 
 public class FileSigningCertificateOptions
 {

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C420397-F0EF-4003-94C8-B75CD469F54A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waterfront.CertificateProviders.Files", "src\Waterfront.CertificateProviders.Files\Waterfront.CertificateProviders.Files.csproj", "{FE9A1A77-0FA0-4ECB-B19B-BADC94A2310F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waterfront.CertificateProviders.File", "src\Waterfront.CertificateProviders.File\Waterfront.CertificateProviders.File.csproj", "{FE9A1A77-0FA0-4ECB-B19B-BADC94A2310F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
